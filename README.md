@@ -1,28 +1,24 @@
 # Send stream Carriots using Python
-Repository of the Carriots class at Python to send stream
+Repository of the Carriots class at Python to send stream.
 
-Class to send stream to Carriots for IoT projects using language Python
+Class to send stream to Carriots for IoT projects using language Python.
 
 ## Example:
     
     from Carriots import Carriots
 
-    apikey = "YOUR APIKEY HERE"
+    account = "YOUR ACCOUNT HERE"
+    apikey  = "YOUR APIKEY HERE"
+    device  = "YOUR DEVICE's ID_DEVELOPER HERE"
     
-    device = "YOUR DEVICE's ID_DEVELOPER HERE"
+    carriots = Carriots(account, apikey)
     
-    carriots = Carriots(apikey)
-    
-    # Get device
+    # Set device
+    carriots.set_device(device)
 
-    carriots.get_device(device)
-
-    # Get properties of device
-
-    carriots.get_device_properties(device).get("name_properties")
+    # Get value property of device
+    carriots.get_value_property("key_property")
 
     # Send stream
-
     data = {"key_1":"value_1", "key_2":"value_2"}
-
     carriots.send_stream(data)
